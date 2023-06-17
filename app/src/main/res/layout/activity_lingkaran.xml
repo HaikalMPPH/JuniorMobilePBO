@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,34 +8,88 @@
     android:orientation="vertical"
     tools:context=".LingkaranActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/elip1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:text="Luas dan Keliling Lingkaran"/>
+        android:src="@drawable/elip1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/elip2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="40dp"
-        android:text="Masukkan Jari-Jari Lingkaran" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/elip1"
+        android:layout_marginTop="17dp"
+        android:text="Luas dan Keliling Lingkaran"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/hitam"
+        android:id="@+id/judul"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/judul"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/lingkaran"
+        android:id="@+id/gambar1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gambar1"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/hitam"
+        android:text="Masukkan Jari-Jari Lingkaran: "
+        android:id="@+id/jari"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/jari2"
+        android:layout_below="@id/jari"
+        android:padding="20dp"
+        android:paddingLeft="5dp"
+        android:background="@drawable/button_shape"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/putih"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:hint="Input Jari-Jari"
-        android:id="@+id/jari2"/>
+        android:inputType="number"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/hitung"
+        android:layout_below="@id/jari2"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/button_shape"
+        android:layout_width="160dp"
+        android:textColor="@color/putih"
+        android:textSize="20sp"
         android:layout_height="wrap_content"
-        android:text="HITUNG"
-        android:id="@+id/hitung"/>
+        android:text="HITUNG" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/hitung"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
         android:text="Luas dan Keliling"
+        android:textColor="@color/hitam"
         android:id="@+id/nilai"/>
 
-</LinearLayout>
+</RelativeLayout>
