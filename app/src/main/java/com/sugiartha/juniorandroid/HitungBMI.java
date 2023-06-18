@@ -3,7 +3,7 @@ package com.sugiartha.juniorandroid;
 public class HitungBMI {
     public String hitungBMI(double beratBadan, double tinggiBadan){
         String statusBadan;
-        double BMI = beratBadan/(tinggiBadan*tinggiBadan);
+        double BMI = beratBadan/((tinggiBadan*tinggiBadan)/10000);
         if(BMI<18.5){
             statusBadan = "Anda kekurangan berat badan.";
         } else if(BMI>=18.5 && BMI<=24.9){
