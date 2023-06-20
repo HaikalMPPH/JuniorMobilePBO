@@ -90,6 +90,7 @@
         android:layout_marginLeft="20dp"
         android:text="Luas dan Keliling"
         android:textColor="@color/hitam"
+        android:textSize="20sp"
         android:id="@+id/nilai"/>
 
 </RelativeLayout>
