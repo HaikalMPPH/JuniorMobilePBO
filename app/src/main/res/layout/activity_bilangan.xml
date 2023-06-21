@@ -1,33 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".BilanganActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/elip1"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/elip2"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Masukkan Angka" />
+        android:text="Masukkan Angka"
+        android:layout_marginTop="150dp"
+        android:textSize="25sp"
+        android:textColor="@color/hitam"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textMasukkanAngka" />
+
+    <ImageView
+        android:id="@+id/ganjilgenap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textMasukkanAngka"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ganjilgenap" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:hint="Masukkan Sembarang Angka"
-        android:id="@+id/angka"/>
+        android:id="@+id/angka"
+        android:textColor="#212121"
+        android:textSize="20sp"
+        android:backgroundTint="@color/putih"
+        android:background="@drawable/button_shape"
+        android:padding="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/ganjilgenap"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Proses"
-        android:id="@+id/proses"/>
+        android:id="@+id/proses"
+        android:textColor="@color/putih"
+        android:textSize="18sp"
+        android:background="@drawable/button_shape"
+        android:padding="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/angka"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bilangan"
-        android:id="@+id/bilangan"/>
+        android:textSize="24sp"
+        android:textColor="#212121"
+        android:layout_marginTop="16dp"
+        android:id="@+id/bilangan"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:layout_below="@id/proses"
+        android:layout_centerHorizontal="true" />
 
-</LinearLayout>
+</RelativeLayout>
