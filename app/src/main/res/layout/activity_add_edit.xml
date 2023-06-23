@@ -1,53 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context=".AddEditActivity">
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/elip2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image2"
+        android:layout_alignStart="@id/image2"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-122dp"
+        android:src="@drawable/elip1" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image1"
+        android:text="Tambahkan Data"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:id="@+id/txt_id"
+        android:layout_below="@id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
-    <EditText
-        android:id="@+id/txt_name"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/name_input_layout"
+        android:layout_below="@id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Input Nama"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="30dp"
+        android:hint="Input Nama">
 
-    <EditText
-        android:id="@+id/txt_address"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/address_input_layout"
+        android:layout_below="@id/name_input_layout"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Input Alamat"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Input Alamat">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btn_submit"
-            android:layout_weight="0.5"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_address"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit"/>
+            android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/btn_cancel"
-            android:layout_weight="0.5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cancel"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="150sp"
+        android:layout_height="48dp"
+        android:layout_below="@id/address_input_layout"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="45dp"
+        android:background="@drawable/button_shape"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/address_input_layout"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/btn_submit"
+        android:background="@drawable/button_shape"
+        android:text="Cancel"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</RelativeLayout>
