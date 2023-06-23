@@ -30,8 +30,8 @@
 
     <ImageView
         android:id="@+id/tubuh_bmi"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
         android:layout_below="@id/judul_bmi"
         android:layout_centerInParent="true"
         android:src="@drawable/tubuh" />
@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtTinggiBadan"
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/button_shape"
         android:textColor="@color/putih"
         android:textSize="20sp"

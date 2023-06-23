@@ -1,192 +1,411 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    android:background="@drawable/bg"
-    tools:showIn="@layout/app_bar_main">
+    android:layout_height="750dp"
+    android:layout_width="wrap_content">
 
-    <com.synnapps.carouselview.CarouselView
-        android:id="@+id/carouselView"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:fillColor="#FFFFFFFF"
-        app:pageColor="#00000000"
-        app:radius="6dp"
-        app:slideInterval="3000"
-        app:strokeColor="#FF777777"
-        app:strokeWidth="1dp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-
-        android:layout_below="@+id/carouselView">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="@dimen/lebar"
-            android:layout_height="@dimen/tinggi"
-            android:text="Nama"
-            android:id="@+id/nama"/>
-
-        <Button
-            android:layout_width="@dimen/lebar"
-            android:layout_height="@dimen/tinggi"
-            android:text="Kalkulator"
-            android:id="@+id/kalkulator"/>
-
-        <Button
-            android:layout_width="@dimen/lebar"
-            android:layout_height="@dimen/tinggi"
-            android:text="Lingkaran"
-            android:id="@+id/lingkaran"/>
-    </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="Bilangan"
-                android:id="@+id/bilangan"/>
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="Login"
-                android:id="@+id/login"/>
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="Sign Up"
-                android:id="@+id/signup"/>
-
-        </LinearLayout>
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".MainActivity"
+        tools:showIn="@layout/app_bar_main">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_below="@+id/carouselView"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
 
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="Calculator"
-                android:id="@+id/calculator"/>
+            android:orientation="vertical">
 
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="BMI"
-                android:id="@+id/bmi"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="List View"
-                android:id="@+id/listview"/>
+                <Button
+                    android:id="@+id/nama"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:background="@drawable/logo_name1"
+                    android:scaleY="2" />
 
+                <TextView
+                    android:id="@+id/nama_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nama"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Nama"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/kalkulator"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/nama"
+                    android:background="@drawable/baseline_calculate_24"
+                    android:scaleX="0.5" />
+
+                <TextView
+                    android:id="@+id/kalkulator_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/kalkulator"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="Kalkulator"
+                    android:textColor="@color/hitam"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/lingkaran"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/kalkulator"
+                    android:background="@drawable/lingkaran"
+                    android:scaleX="0.6"
+                    android:scaleY="0.8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lingkaran"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Lingkaran"
+                    android:textColor="@color/hitam"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bilangan"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:background="@drawable/baseline_123_24"
+                    android:scaleX="0.6"
+                    android:scaleY="1.8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bilangan"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Bilangan"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/bilangan"
+                    android:background="@drawable/login"
+                    android:scaleX="0.5"
+                    android:scaleY="0.8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/login"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="Login"
+                    android:textColor="@color/hitam"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/signup"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/login"
+                    android:background="@drawable/signup"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/signup"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Sign Up"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/calculator"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:background="@drawable/calculator"
+                    android:scaleX="0.6"
+                    android:scaleY="0.7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/calculator"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Calculator"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/bmi"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/calculator"
+                    android:background="@drawable/bmi"
+                    android:scaleX="0.5"
+                    android:scaleY="0.7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bmi"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="BMI"
+                    android:textColor="@color/hitam" />
+
+                <Button
+                    android:id="@+id/listview"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/bmi"
+                    android:background="@drawable/listview"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/listview"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="5dp"
+                    android:text="List View"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/catatan"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:background="@drawable/note"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/catatan"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Catatan"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/internalexternal"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/catatan"
+                    android:background="@drawable/file"
+                    android:scaleX="0.7"
+                    android:scaleY="0.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/internalexternal"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="File"
+                    android:textColor="@color/hitam" />
+
+                <Button
+                    android:id="@+id/storage"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/internalexternal"
+                    android:background="@drawable/storage"
+                    android:scaleX="0.5"
+                    android:scaleY="0.7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storage"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Storage"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/list"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:background="@drawable/list"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginTop="5dp"
+                    android:text="List"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+
+                <Button
+                    android:id="@+id/sqlite"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/list"
+                    android:background="@drawable/sqlite"
+                    android:scaleX="0.5"
+                    android:scaleY="0.8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sqlite"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="SQLite"
+                    android:textColor="@color/hitam" />
+
+                <Button
+                    android:id="@+id/mysql"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/sqlite"
+                    android:background="@drawable/mysql"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mysql"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="5dp"
+                    android:text="MySQL"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/gps"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:background="@drawable/gps"
+                    android:scaleX="0.5"
+                    android:scaleY="0.6"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gps"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginTop="5dp"
+                    android:text="GPS"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp"/>
+
+                <Button
+                    android:id="@+id/seluler"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/gps"
+                    android:background="@drawable/baseline_local_phone_24"
+                    android:scaleY="0.5"
+                    android:scaleX="0.5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/seluler"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="Seluler"
+                    android:textColor="@color/hitam"/>
+
+                <Button
+                    android:id="@+id/sensor"
+                    android:layout_width="@dimen/lebar"
+                    android:layout_height="@dimen/tinggi"
+                    android:layout_toRightOf="@id/seluler"
+                    android:background="@drawable/sensor"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sensor"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Sensor"
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp"/>
+
+            </RelativeLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="Catatan"
-                android:id="@+id/catatan"/>
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="File"
-                android:id="@+id/internalexternal"/>
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="Storage"
-                android:id="@+id/storage"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="List"
-                android:id="@+id/list"/>
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="SQLite"
-                android:id="@+id/sqlite"/>
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="MySQL"
-                android:id="@+id/mysql"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="CEK GPS"
-                android:id="@+id/gps"/>
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="Seluler"
-                android:id="@+id/seluler"/>
-
-            <Button
-                android:layout_width="@dimen/lebar"
-                android:layout_height="@dimen/tinggi"
-                android:text="Sensor"
-                android:id="@+id/sensor"/>
-
-        </LinearLayout>
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
