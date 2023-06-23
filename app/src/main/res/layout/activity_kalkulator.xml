@@ -17,6 +17,18 @@
 <!--        android:layout_height="wrap_content"-->
 <!--        android:text="Input Angka Kedua"/>-->
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/elip1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/elip2" />
+
     <EditText
         android:id="@+id/angka1"
         android:layout_width="249dp"
@@ -26,30 +38,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="93dp"
-        android:layout_marginRight="93dp"
-        android:hint=" "
-        android:inputType="numberDecimal"
-        android:textSize="40dp" />
-
-    <EditText
-        android:id="@+id/angka2"
-        android:layout_width="259dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginEnd="93dp"
-        android:layout_marginRight="93dp"
-        android:layout_marginBottom="275dp"
-        android:hint=" "
+        android:layout_marginStart="71dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginRight="73dp"
+        android:hint="Input 1"
         android:inputType="numberDecimal"
         android:textSize="40dp" />
 
@@ -63,26 +57,58 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
-        android:layout_marginTop="246dp"
-        android:layout_marginEnd="272dp"
-        android:layout_marginRight="272dp"
-        android:layout_marginBottom="386dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="238dp"
+        android:layout_marginRight="238dp"
+        android:layout_marginBottom="367dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
         android:text=" + "
-        android:textSize="60dp" />
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="35dp" />
 
     <TextView
         android:id="@+id/txtHasil"
-        android:layout_width="wrap_content"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnHitung"
+        android:layout_alignLeft="@+id/btnHitung"
+        android:layout_alignTop="@+id/btnHitung"
+        android:layout_alignBottom="@+id/btnHitung"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="109dp"
+        android:layout_marginLeft="109dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
+        android:layout_marginBottom="-1dp"
+        android:gravity="center"
+        android:text=" "
+        android:textAlignment="center"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/angka2"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="114dp"
-        android:text="Hasil"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginRight="69dp"
+        android:layout_marginBottom="259dp"
+        android:hint="Input 2"
+        android:inputType="numberDecimal"
         android:textSize="40dp" />
+
+
 
 </RelativeLayout>
