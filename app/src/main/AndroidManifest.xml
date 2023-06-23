@@ -53,7 +53,8 @@
         <activity android:name=".PegawaiMainActivity" />
         <activity android:name=".ListActivity" />
         <activity android:name=".ListViewActivity" />
-        <activity android:name=".HitungBMIActivity"
+        <activity
+            android:name=".HitungBMIActivity"
             android:exported="true"/>
         <activity
             android:name=".CalculatorActivity"
@@ -62,7 +63,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".BilanganActivity" />
         <activity android:name=".KalkulatorActivity" />
-        <activity android:name=".LingkaranActivity"
+        <activity
+            android:name=".LingkaranActivity"
             android:exported="true" />
         <activity android:name=".NamaActivity" />
         <activity
