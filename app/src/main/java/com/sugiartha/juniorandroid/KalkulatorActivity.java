@@ -25,6 +25,13 @@ public class KalkulatorActivity extends AppCompatActivity {
         txtHasil = (TextView) findViewById(R.id.txtHasil);
         btnHitung.setOnClickListener(new Button.OnClickListener() {
             @Override public void onClick(View v) {
+                if (
+                    angka1.getText().toString().isEmpty() &&
+                    angka2.getText().toString().isEmpty()
+                ) {
+                    angka1.setText("0");
+                    angka2.setText("0");
+                }
                 double angkasatu = Double.parseDouble(angka1.getText().toString());
                 double angkadua = Double.parseDouble(angka2.getText().toString());
                 double result = angkasatu + angkadua;
