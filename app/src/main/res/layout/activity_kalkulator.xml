@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,38 +7,82 @@
     android:orientation="vertical"
     tools:context=".KalkulatorActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Input Angka Pertama"/>
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Input Angka Pertama"/>-->
+
+    <!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Input Angka Kedua"/>-->
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/angka1"
+        android:layout_width="249dp"
         android:layout_height="wrap_content"
-        android:hint="Angka Pertama"
-        android:id="@+id/angka1"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Input Angka Kedua"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:hint=" "
+        android:inputType="numberDecimal"
+        android:textSize="40dp" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/angka2"
+        android:layout_width="259dp"
         android:layout_height="wrap_content"
-        android:hint="Angka Kedua"
-        android:id="@+id/angka2"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginRight="93dp"
+        android:layout_marginBottom="275dp"
+        android:hint=" "
+        android:inputType="numberDecimal"
+        android:textSize="40dp" />
 
     <Button
+        android:id="@+id/btnHitung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HITUNG"
-        android:id="@+id/btnHitung"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="246dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginRight="272dp"
+        android:layout_marginBottom="386dp"
+        android:text=" + "
+        android:textSize="60dp" />
 
     <TextView
+        android:id="@+id/txtHasil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="114dp"
         android:text="Hasil"
-        android:id="@+id/txtHasil"/>
+        android:textSize="40dp" />
 
-</LinearLayout>
+</RelativeLayout>
