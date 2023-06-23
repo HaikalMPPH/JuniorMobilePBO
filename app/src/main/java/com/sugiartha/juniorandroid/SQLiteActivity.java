@@ -4,21 +4,19 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.sugiartha.juniorandroid.adapter.Adapter;
-import com.sugiartha.juniorandroid.helper.DbHelper;
-import com.sugiartha.juniorandroid.model.Data;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.sugiartha.juniorandroid.adapter.Adapter;
+import com.sugiartha.juniorandroid.helper.DbHelper;
+import com.sugiartha.juniorandroid.model.Data;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,9 +26,9 @@ public class SQLiteActivity extends AppCompatActivity {
 
     ListView listView;
     AlertDialog.Builder dialog;
-    List<Data> itemList = new ArrayList<Data>();
+    List<Data> itemList = new ArrayList<>();
     Adapter adapter;
-    DbHelper SQLite = new DbHelper(this);
+    DbHelper SQLite;
 
     public static final String TAG_ID = "id";
     public static final String TAG_NAME = "name";
@@ -43,33 +41,25 @@ public class SQLiteActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Tambah SQLite
         SQLite = new DbHelper(getApplicationContext());
-
-        //Tambah List View
-        listView = (ListView) findViewById(R.id.list_view);
+        listView = findViewById(R.id.list_view);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Tambah Intent untuk pindah ke halaman Add dan Edit
                 Intent intent = new Intent(SQLiteActivity.this, AddEditActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down);
             }
         });
 
-        //Tambah adapter dan listview
         adapter = new Adapter(SQLiteActivity.this, itemList);
         listView.setAdapter(adapter);
 
-        // tekan lama daftar listview untuk menampilkan edit dan hapus
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-
             @Override
-            public boolean onItemLongClick(final AdapterView<?> parent, View view,
-                                           final int position, long id) {
-                // TODO Auto-generated method stub
+            public boolean onItemLongClick(final AdapterView<?> parent, View view, final int position, long id) {
                 final String idx = itemList.get(position).getId();
                 final String name = itemList.get(position).getName();
                 final String address = itemList.get(position).getAddress();
@@ -78,10 +68,8 @@ public class SQLiteActivity extends AppCompatActivity {
                 dialog = new AlertDialog.Builder(SQLiteActivity.this);
                 dialog.setCancelable(true);
                 dialog.setItems(dialogitem, new DialogInterface.OnClickListener() {
-
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // TODO Auto-generated method stub
                         switch (which) {
                             case 0:
                                 Intent intent = new Intent(SQLiteActivity.this, AddEditActivity.class);
@@ -91,9 +79,7 @@ public class SQLiteActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 break;
                             case 1:
-                                SQLite.delete(Integer.parseInt(idx));
-                                itemList.clear();
-                                getAllData();
+                                deleteData(Integer.parseInt(idx), position); // Panggil fungsi deleteData
                                 break;
                         }
                     }
@@ -101,25 +87,35 @@ public class SQLiteActivity extends AppCompatActivity {
                 return false;
             }
         });
+
         getAllData();
     }
 
     private void getAllData() {
+        SQLite = new DbHelper(getApplicationContext());
         ArrayList<HashMap<String, String>> row = SQLite.getAllData();
 
         for (int i = 0; i < row.size(); i++) {
             String id = row.get(i).get(TAG_ID);
-            String poster = row.get(i).get(TAG_NAME);
-            String title = row.get(i).get(TAG_ADDRESS);
+            String name = row.get(i).get(TAG_NAME);
+            String address = row.get(i).get(TAG_ADDRESS);
 
             Data data = new Data();
 
             data.setId(id);
-            data.setName(poster);
-            data.setAddress(title);
+            data.setName("Nama: " + name);
+            data.setAddress("Alamat: " + address);
 
             itemList.add(data);
         }
+        adapter.notifyDataSetChanged();
+    }
+
+
+    // Fungsi untuk menghapus data dari database SQLite
+    private void deleteData(int id, final int position) {
+        SQLite.delete(id);
+        itemList.remove(position);
         adapter.notifyDataSetChanged();
     }
 }
