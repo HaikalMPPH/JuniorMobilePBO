@@ -24,45 +24,31 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
 
-// buat carousel
-import androidx.constraintlayout.helper.widget.Carousel;
+// carousel
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
-public class MainActivity
-        extends AppCompatActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    CarouselView carouselView;
     Button btnNama, btnKalkulator, btnLingkaran, btnBilangan, btnLogin, btnSignup, btnCalculator, btnBMI, btnListview, btnList, btnSqlite, btnMysql, btngps, btnseluler, btnsensor, btncatatan, btninternalexternal, btnstorage;
 
     int[] sampleImages = {R.drawable.gambar_1, R.drawable.gambar_2, R.drawable.gambar_3};
 
-    // carousel
-    Carousel carousel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        carouselView = findViewById(R.id.carouselView);
-//        carouselView.setPageCount(sampleImages.length);
-//        carouselView.setImageListener(imageListener);
 
-        // carousel
-        carousel.setAdapter(new Carousel.Adapter() {
+        // carousel balik lagi
+        carouselView = (CarouselView) findViewById(R.id.carousel);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(new ImageListener() {
             @Override
-            public int count() {
-                return carousel.getCount();
-            }
-
-            @Override
-            public void populate(View view, int index) {
-
-            }
-
-            @Override
-            public void onNewItem(int index) {
-
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(sampleImages[position]);
             }
         });
 
