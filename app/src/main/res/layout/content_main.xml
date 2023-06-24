@@ -5,6 +5,8 @@
     android:layout_height="750dp"
     android:layout_width="wrap_content">
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,12 +15,19 @@
         tools:context=".MainActivity"
         tools:showIn="@layout/app_bar_main">
 
+        <!-- CAROUSEL -->
+        <!-- TODO: BIkin motion layout trs isi transisition dan lain2 buat carousel -->
+        <Transisiton>
+
+        </Transisiton>
+        <!-- CAROUSEL -->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/carouselView"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
 
             android:orientation="vertical">
