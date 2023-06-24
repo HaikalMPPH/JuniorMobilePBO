@@ -5,6 +5,8 @@
     android:layout_height="750dp"
     android:layout_width="wrap_content">
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,12 +15,22 @@
         tools:context=".MainActivity"
         tools:showIn="@layout/app_bar_main">
 
+        <!-- CAROUSEL -->
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carousel"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:slideInterval="3000"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"/>
+        <!-- CAROUSEL -->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/carouselView"
+            android:layout_below="@id/carousel"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
 
             android:orientation="vertical">

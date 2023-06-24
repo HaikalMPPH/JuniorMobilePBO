@@ -14,8 +14,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
-//import com.synnapps.carouselview.CarouselView;
-//import com.synnapps.carouselview.ImageListener;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -26,12 +24,16 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
 
+// carousel
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    CarouselView carouselView;
     Button btnNama, btnKalkulator, btnLingkaran, btnBilangan, btnLogin, btnSignup, btnCalculator, btnBMI, btnListview, btnList, btnSqlite, btnMysql, btngps, btnseluler, btnsensor, btncatatan, btninternalexternal, btnstorage;
 
-    //CarouselView carouselView;
     int[] sampleImages = {R.drawable.gambar_1, R.drawable.gambar_2, R.drawable.gambar_3};
 
     @Override
@@ -39,11 +41,16 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        carouselView = findViewById(R.id.carouselView);
-//        carouselView.setPageCount(sampleImages.length);
-//        carouselView.setImageListener(imageListener);
+
+        // carousel balik lagi
+        carouselView = (CarouselView) findViewById(R.id.carousel);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(sampleImages[position]);
+            }
+        });
 
         btnNama = (Button) findViewById(R.id.nama);
         btnKalkulator = (Button) findViewById(R.id.kalkulator);
