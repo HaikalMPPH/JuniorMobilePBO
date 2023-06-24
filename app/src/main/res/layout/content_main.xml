@@ -14,6 +14,7 @@
         tools:context=".MainActivity"
         tools:showIn="@layout/app_bar_main">
 
+        
         <com.synnapps.carouselview.CarouselView
             android:id="@+id/carouselView"
             android:layout_width="match_parent"
