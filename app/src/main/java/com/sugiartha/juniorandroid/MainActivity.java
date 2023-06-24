@@ -237,12 +237,12 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-//    ImageListener imageListener = new ImageListener() {
-//        @Override
-//        public void setImageForPosition(int position, ImageView imageView) {
-//            imageView.setImageResource(sampleImages[position]);
-//        }
-//    };
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+        }
+    };
 
     @Override
     public void onBackPressed() {
