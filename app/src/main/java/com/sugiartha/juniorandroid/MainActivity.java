@@ -24,13 +24,19 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity
+// buat carousel
+import androidx.constraintlayout.helper.widget.Carousel;
+
+public class MainActivity
+        extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Button btnNama, btnKalkulator, btnLingkaran, btnBilangan, btnLogin, btnSignup, btnCalculator, btnBMI, btnListview, btnList, btnSqlite, btnMysql, btngps, btnseluler, btnsensor, btncatatan, btninternalexternal, btnstorage;
 
     int[] sampleImages = {R.drawable.gambar_1, R.drawable.gambar_2, R.drawable.gambar_3};
 
+    // carousel
+    Carousel carousel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +47,24 @@ public class MainActivity extends AppCompatActivity
 //        carouselView = findViewById(R.id.carouselView);
 //        carouselView.setPageCount(sampleImages.length);
 //        carouselView.setImageListener(imageListener);
+
+        // carousel
+        carousel.setAdapter(new Carousel.Adapter() {
+            @Override
+            public int count() {
+                return carousel.getCount();
+            }
+
+            @Override
+            public void populate(View view, int index) {
+
+            }
+
+            @Override
+            public void onNewItem(int index) {
+
+            }
+        });
 
         btnNama = (Button) findViewById(R.id.nama);
         btnKalkulator = (Button) findViewById(R.id.kalkulator);

@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     namespace 'com.sugiartha.juniorandroid'
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.sugiartha.juniorandroid"
-        minSdkVersion 16
-        targetSdkVersion 32
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -35,5 +35,4 @@ dependencies {
     implementation 'com.karumi:dexter:6.2.3'
     //implementation 'com.google.android.material:material:1.9.0'
     implementation("androidx.constraintlayout:constraintlayout:2.2.0-alpha10")
-    implementation "androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha10"
 }
