@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- FORWARD -->
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/next"
+        motion:duration="5000">
+        <OnSwipe
+            motion:touchAnchorId="@+id/forward"
+            motion:touchAnchorSide="left"
+            motion:dragDirection="dragLeft"/>
+    </Transition>
+
+    <!-- BACKWARD -->
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/previous"
+        motion:duration="5000">
+        <OnSwipe
+            motion:touchAnchorId="@+id/carouselMSButton"
+            motion:touchAnchorSide="right"
+            motion:dragDirection="dragRight"/>
+    </Transition>
+
+
+<!--    <ConstraintSet android:id="@+id/start">-->
+<!--        <Constraint-->
+<!--            android:id="@+id/carouselMSButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="120dp"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            />-->
+<!--    </ConstraintSet>-->
+</MotionScene>
