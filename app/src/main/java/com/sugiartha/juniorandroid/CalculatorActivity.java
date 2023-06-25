@@ -13,7 +13,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
     //Deklarasi variable
     EditText angka_pertama, angka_kedua;
-    Button tambah, kurang, kali, bagi, bersihkan, mod, pow, sqrt, shift_l, shift_r;
+    Button tambah, kurang, kali, bagi, bersihkan, mod, pow, root, shift_l, shift_r;
     TextView hasil;
 
     @Override
@@ -32,7 +32,7 @@ public class CalculatorActivity extends AppCompatActivity {
         bersihkan = (Button) findViewById(R.id.bersihkan);
         mod = (Button) findViewById(R.id.mod);
         pow = (Button) findViewById(R.id.pow);
-        sqrt = (Button) findViewById(R.id.sqrt);
+        root = (Button) findViewById(R.id.root);
         shift_l = (Button) findViewById(R.id.shift_l);
         shift_r = (Button) findViewById(R.id.shift_r);
         hasil = (TextView) findViewById(R.id.hasil);
@@ -113,6 +113,33 @@ public class CalculatorActivity extends AppCompatActivity {
                 double lhs = Double.parseDouble(angka_pertama.getText().toString());
                 double rhs = Double.parseDouble(angka_kedua.getText().toString());
                 hasil.setText(Double.toString(lhs % rhs));
+            }
+        });
+        // pangkat
+        pow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double lhs = Double.parseDouble(angka_pertama.getText().toString());
+                double rhs = Double.parseDouble(angka_kedua.getText().toString());
+                hasil.setText(Double.toString(Math.pow(lhs, rhs)));
+            }
+        });
+        // akar
+        root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double lhs = Double.parseDouble(angka_pertama.getText().toString());
+                double rhs = Double.parseDouble(angka_kedua.getText().toString());
+                hasil.setText(Double.toString(Math.pow(lhs, rhs)));
+            }
+        });
+        // bitshift left
+        shift_l.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int lhs = Integer.parseInt(angka_pertama.getText().toString());
+                int rhs = Integer.parseInt(angka_kedua.getText().toString());
+                hasil.setText(Double.toString(lhs << rhs));
             }
         });
 

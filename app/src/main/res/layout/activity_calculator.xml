@@ -105,7 +105,7 @@
         android:textSize="25dp"
         android:text="^" />
     <Button
-        android:id="@+id/sqrt"
+        android:id="@+id/root"
         android:layout_below="@id/bagi"
         android:layout_width="75dp"
         android:layout_height="75dp"
