@@ -14,7 +14,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class InternalExternalActivity extends AppCompatActivity implements View.OnClickListener{
+public class InternalExternalActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String FILENAME = "dts2022.txt";
     TextView textBaca;
@@ -36,82 +36,78 @@ public class InternalExternalActivity extends AppCompatActivity implements View.
         deleteFile.setOnClickListener(this);
     }
 
-    void buatFile(){
+    void buatFile() {
         String isiFile = "Jadilah Jagoan Digital";
         File file = new File(getFilesDir(), FILENAME);
 
-        FileOutputStream outputStream = null;
-
         try {
-            file.createNewFile();
-            outputStream = new FileOutputStream(file, true);
+            FileOutputStream outputStream = new FileOutputStream(file);
             outputStream.write(isiFile.getBytes());
-            outputStream.flush();
             outputStream.close();
 
             Toast.makeText(this, getFilesDir().toString(), Toast.LENGTH_LONG).show();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    void ubahFile(){
+    void ubahFile() {
         String ubah = "Semangat Berjuang Peserta DTS";
         File file = new File(getFilesDir(), FILENAME);
 
-        FileOutputStream outputStream = null;
-
         try {
-            file.createNewFile();
-            outputStream = new FileOutputStream(file, false);
+            FileOutputStream outputStream = new FileOutputStream(file, false);
             outputStream.write(ubah.getBytes());
-            outputStream.flush();
             outputStream.close();
 
-            Toast.makeText(this, "file berhasil diubah", Toast.LENGTH_LONG).show();
-        }
-        catch (Exception e) {
+            Toast.makeText(this, "File berhasil diubah", Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    void bacaFile(){
-        File sdcard = getFilesDir();
-        File file = new File(sdcard, FILENAME);
+    void bacaFile() {
+        File file = new File(getFilesDir(), FILENAME);
 
-        if(file.exists()){
+        if (file.exists()) {
             StringBuilder text = new StringBuilder();
 
             try {
                 BufferedReader br = new BufferedReader(new FileReader(file));
                 String line = br.readLine();
 
-                while (line != null){
+                while (line != null) {
                     text.append(line);
                     line = br.readLine();
                 }
                 br.close();
                 Toast.makeText(this, "Membaca File", Toast.LENGTH_SHORT).show();
-            }
-            catch (IOException e){
-                System.out.println("Error "+e.getMessage());
+            } catch (IOException e) {
+                e.printStackTrace();
             }
             textBaca.setText(text.toString());
         }
     }
 
-    void hapusFile(){
+    void hapusFile() {
         File file = new File(getFilesDir(), FILENAME);
-        if(file.exists()){
+        if (file.exists()) {
             file.delete();
-            Toast.makeText(this, "File Sudah Terhapus", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "File sudah terhapus", Toast.LENGTH_SHORT).show();
+
+            // Menghapus pesan pada TextView
+            textBaca.setText("");
         }
     }
 
-    public void jalanPerintah(int id){
-        switch (id){
-            case  R.id.btnBuatFile:
+    @Override
+    public void onClick(View view) {
+        jalanPerintah(view.getId());
+    }
+
+    public void jalanPerintah(int id) {
+        switch (id) {
+            case R.id.btnBuatFile:
                 buatFile();
                 break;
             case R.id.btnUbahFile:
@@ -124,10 +120,5 @@ public class InternalExternalActivity extends AppCompatActivity implements View.
                 hapusFile();
                 break;
         }
-    }
-
-    @Override
-    public void onClick(View view) {
-        jalanPerintah(view.getId());
     }
 }
