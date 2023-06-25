@@ -17,6 +17,7 @@
         android:layout_marginStart="25dp"
         android:textAlignment="center"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
         android:textSize="50sp" />
 
     <!-- INPUT -->
@@ -105,7 +106,7 @@
         android:textSize="25dp"
         android:text="^" />
     <Button
-        android:id="@+id/sqrt"
+        android:id="@+id/root"
         android:layout_below="@id/bagi"
         android:layout_width="75dp"
         android:layout_height="75dp"
@@ -123,7 +124,7 @@
         android:layout_alignLeft="@id/mod"
         android:layout_alignRight="@id/mod"
         android:textSize="25dp"
-        android:text="<<" />
+        android:text="&lt;&lt;" />
     <Button
         android:id="@+id/shift_r"
         android:layout_below="@id/bagi"

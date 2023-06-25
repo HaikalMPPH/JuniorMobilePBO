@@ -28,7 +28,7 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        getSupportActionBar().setTitle("ListView Sederhana"); // Tampil judul
+//        getSupportActionBar().setTitle("ListView Sederhana"); // Tampil judul
 
         // Membinding atau memformat data
         lvItem = (ListView) findViewById(R.id.list_view);
