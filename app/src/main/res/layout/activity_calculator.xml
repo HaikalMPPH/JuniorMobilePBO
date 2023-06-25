@@ -123,7 +123,7 @@
         android:layout_alignLeft="@id/mod"
         android:layout_alignRight="@id/mod"
         android:textSize="25dp"
-        android:text="<<" />
+        android:text="&lt;&lt;" />
     <Button
         android:id="@+id/shift_r"
         android:layout_below="@id/bagi"
