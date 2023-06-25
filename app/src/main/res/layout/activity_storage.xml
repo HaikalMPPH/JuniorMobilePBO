@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/gruv_bg"
     tools:context=".StorageActivity">
 
     <EditText
@@ -19,26 +20,44 @@
         android:hint="Masukan Data"
         android:inputType="textPersonName" />
 
-    <Button
+    <ImageButton
         android:id="@+id/save_internal"
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/folder_img_foreground"
 
         android:layout_below="@id/input_data"
         android:layout_alignLeft="@id/input_data"
         android:layout_marginRight="210dp"
+        android:layout_marginTop="25dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INTERNAL"
+        android:layout_below="@id/save_internal"
+        android:textAlignment="center"
+        android:layout_alignRight="@id/save_internal"
+        android:layout_alignLeft="@id/save_internal"/>
 
-        android:text="SAVE TO INTERNAL" />
-
-    <Button
+    <ImageButton
         android:id="@+id/save_external"
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sdcard_img_foreground"
 
         android:layout_below="@id/input_data"
+        android:layout_alignTop="@id/save_internal"
         android:layout_alignRight="@id/input_data"
         android:layout_marginLeft="210dp"
 
         android:text="SAVE TO EXTERNAL" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EXTERNAL"
+        android:layout_below="@id/save_external"
+        android:textAlignment="center"
+        android:layout_alignRight="@id/save_external"
+        android:layout_alignLeft="@id/save_external"/>
 
 </RelativeLayout>
