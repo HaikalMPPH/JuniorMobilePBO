@@ -171,7 +171,7 @@ public class CalculatorActivity extends AppCompatActivity {
             }
         });
         // bitshift right
-        shift_l.setOnClickListener(new View.OnClickListener() {
+        shift_r.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
