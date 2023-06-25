@@ -110,36 +110,75 @@ public class CalculatorActivity extends AppCompatActivity {
         mod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double lhs = Double.parseDouble(angka_pertama.getText().toString());
-                double rhs = Double.parseDouble(angka_kedua.getText().toString());
-                hasil.setText(Double.toString(lhs % rhs));
+                if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
+                    double lhs = Double.parseDouble(angka_pertama.getText().toString());
+                    double rhs = Double.parseDouble(angka_kedua.getText().toString());
+                    hasil.setText(Double.toString(lhs % rhs));
+                }
+                else {
+                    Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
         // pangkat
         pow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double lhs = Double.parseDouble(angka_pertama.getText().toString());
-                double rhs = Double.parseDouble(angka_kedua.getText().toString());
-                hasil.setText(Double.toString(Math.pow(lhs, rhs)));
+                if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
+                    double lhs = Double.parseDouble(angka_pertama.getText().toString());
+                    double rhs = Double.parseDouble(angka_kedua.getText().toString());
+                    hasil.setText(Double.toString(Math.pow(lhs, rhs)));
+                }
+                else {
+                    Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
         // akar
         root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double lhs = Double.parseDouble(angka_pertama.getText().toString());
-                double rhs = Double.parseDouble(angka_kedua.getText().toString());
-                hasil.setText(Double.toString(Math.pow(lhs, rhs)));
+                if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
+                    double lhs = Double.parseDouble(angka_pertama.getText().toString());
+                    double rhs = Double.parseDouble(angka_kedua.getText().toString());
+                    hasil.setText(Double.toString(Math.pow(lhs, -rhs)));
+                }
+                else {
+                    Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
         // bitshift left
         shift_l.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int lhs = Integer.parseInt(angka_pertama.getText().toString());
-                int rhs = Integer.parseInt(angka_kedua.getText().toString());
-                hasil.setText(Double.toString(lhs << rhs));
+                if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
+                    int lhs = Integer.parseInt(angka_pertama.getText().toString());
+                    int rhs = Integer.parseInt(angka_kedua.getText().toString());
+                    hasil.setText(Double.toString(lhs << rhs));
+                }
+                else {
+                    Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            }
+        });
+        // bitshift right
+        shift_l.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
+                    int lhs = Integer.parseInt(angka_pertama.getText().toString());
+                    int rhs = Integer.parseInt(angka_kedua.getText().toString());
+                    hasil.setText(Double.toString(lhs >> rhs));
+                }
+                else {
+                    Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
 
