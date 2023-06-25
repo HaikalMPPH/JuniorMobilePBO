@@ -13,7 +13,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
     //Deklarasi variable
     EditText angka_pertama, angka_kedua;
-    Button tambah, kurang, kali, bagi, bersihkan;
+    Button tambah, kurang, kali, bagi, bersihkan, mod, pow, sqrt, shift_l, shift_r;
     TextView hasil;
 
     @Override
@@ -30,6 +30,11 @@ public class CalculatorActivity extends AppCompatActivity {
         kali = (Button)findViewById(R.id.kali);
         bagi = (Button)findViewById(R.id.bagi);
         bersihkan = (Button) findViewById(R.id.bersihkan);
+        mod = (Button) findViewById(R.id.mod);
+        pow = (Button) findViewById(R.id.pow);
+        sqrt = (Button) findViewById(R.id.sqrt);
+        shift_l = (Button) findViewById(R.id.shift_l);
+        shift_r = (Button) findViewById(R.id.shift_r);
         hasil = (TextView) findViewById(R.id.hasil);
 
         tambah.setOnClickListener(new View.OnClickListener() {
