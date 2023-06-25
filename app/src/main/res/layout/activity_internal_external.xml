@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".InternalExternalActivity">
+
+    <TextView
+        android:id="@+id/textBaca"
+        android:layout_width="372dp"
+        android:layout_height="106dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Button
         android:id="@+id/btnBuatFile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buat File"/>
+        android:layout_below="@id/textBaca"
+        android:layout_marginTop="170dp"
+        android:text="Buat File" />
 
     <Button
         android:id="@+id/btnUbahFile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ubah File"/>
+        android:layout_below="@id/btnBuatFile"
+        android:layout_marginTop="13dp"
+        android:text="Ubah File" />
 
     <Button
         android:id="@+id/btnBacaFile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Baca File"/>
+        android:layout_below="@id/btnUbahFile"
+        android:layout_marginTop="9dp"
+        android:text="Baca File" />
 
     <Button
         android:id="@+id/btnHapusFile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hapus File"/>
+        android:layout_below="@id/btnBacaFile"
+        android:layout_marginTop="6dp"
+        android:text="Hapus File" />
 
-    <EditText
-        android:id="@+id/textBaca"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:inputType="textMultiLine"
-        android:background="@android:color/darker_gray"
-        android:ems="10"
-        android:gravity="left|top"
-        android:padding="5dp"
-        android:layout_marginTop="10dp"
-        android:hint="Hasil Baca File"/>
+</RelativeLayout>
 
-</LinearLayout>
