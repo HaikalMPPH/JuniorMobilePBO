@@ -21,15 +21,20 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 public class GPS extends AppCompatActivity {
     private FusedLocationProviderClient client;
-    @SuppressLint("MissingPermission")
+    private TextView locationTextView; // Tambahkan variabel TextView
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps);
+
         requestPermission();
+
         client = LocationServices.getFusedLocationProviderClient(this);
+
         Button button = findViewById(R.id.getLocation);
+        locationTextView = findViewById(R.id.location); // Inisialisasi TextView
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,15 +42,16 @@ public class GPS extends AppCompatActivity {
                     System.out.println("Cek Permission");
                     return;
                 }
+
                 client.getLastLocation().addOnSuccessListener(GPS.this, new OnSuccessListener<Location>() {
                     @Override
                     public void onSuccess(Location location) {
                         if (location != null) {
-                            TextView textView = findViewById(R.id.location);
-                            textView.setText(location.toString());
+                            locationTextView.setText(location.toString()); // Set teks TextView dengan lokasi
                             System.out.print("Cek Lokasi: "+location.toString());
 
                             Log.d("My Current location", "Lat : " + location.getLatitude() + " Long : " + location.getLongitude());
+
                             // Display in Toast
                             Toast.makeText(GPS.this,
                                     "Lat : " + location.getLatitude() + " Long : " + location.getLongitude(),
@@ -55,22 +61,8 @@ public class GPS extends AppCompatActivity {
                 });
             }
         });
-        // GET CURRENT LOCATION
-        FusedLocationProviderClient mFusedLocation = LocationServices.getFusedLocationProviderClient(this);
-        mFusedLocation.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
-            @Override
-            public void onSuccess(Location location) {
-                if (location != null){
-                    // Do it all with location
-                    Log.d("My Current location", "Lat : " + location.getLatitude() + " Long : " + location.getLongitude());
-                    // Display in Toast
-                    Toast.makeText(GPS.this,
-                            "Lat : " + location.getLatitude() + " Long : " + location.getLongitude(),
-                            Toast.LENGTH_LONG).show();
-                }
-            }
-        });
     }
+
     private void requestPermission(){
         ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION}, 1);
         System.out.println("Cek Request Permission");

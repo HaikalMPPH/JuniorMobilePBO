@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NamaActivity extends AppCompatActivity {
 
@@ -19,15 +20,23 @@ public class NamaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nama);
 
-        btnOk = (Button) findViewById(R.id.btnOk);
-        editNama = (EditText) findViewById(R.id.editNama);
-        txtHasil = (TextView) findViewById(R.id.txtHasil);
-        btnOk.setOnClickListener(new Button.OnClickListener() {
+        btnOk = findViewById(R.id.btnOk);
+        editNama = findViewById(R.id.editNama);
+        txtHasil = findViewById(R.id.txtHasil);
+
+        btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtHasil.setText("Hello " + editNama.getText().toString()
-                        + "!\nPeserta VSGA" + "");
+                String nama = editNama.getText().toString();
+                if (!nama.isEmpty()) {
+                    String message = "Selamat Datang " + nama + "! Peserta VSGA";
+                    txtHasil.setText(message);
+                    Toast.makeText(NamaActivity.this, "Data berhasil ditambahkan", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(NamaActivity.this, "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 }
+
