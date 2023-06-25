@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class CalculatorActivity extends AppCompatActivity {
 
     //Deklarasi variable
@@ -97,7 +99,9 @@ public class CalculatorActivity extends AppCompatActivity {
                     double angka1 = Double.parseDouble(angka_pertama.getText().toString());
                     double angka2 = Double.parseDouble(angka_kedua.getText().toString());
                     double result = angka1 / angka2;
-                    hasil.setText(Double.toString(result));
+                    hasil
+                        .setText(new DecimalFormat("##.#")
+                        .format(angka1/angka2));
                 }
                 else {
                     Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);

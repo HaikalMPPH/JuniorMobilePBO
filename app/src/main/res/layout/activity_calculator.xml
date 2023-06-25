@@ -17,6 +17,7 @@
         android:layout_marginStart="25dp"
         android:textAlignment="center"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
         android:textSize="50sp" />
 
     <!-- INPUT -->
