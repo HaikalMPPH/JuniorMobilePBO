@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bgmysql"
     tools:context=".PegawaiMainActivity">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="210dp"
+    android:paddingHorizontal="10dp"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,15 +46,35 @@
         android:layout_height="wrap_content"
         android:id="@+id/editTextSalary" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tambah Pegawai"
-        android:id="@+id/buttonAdd" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Daftar Pegawai"
-        android:id="@+id/buttonView" />
+</androidx.appcompat.widget.LinearLayoutCompat>
 
-</LinearLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="430dp"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:text="Tambah Pegawai"
+            android:background="@drawable/button_kotak_hijau"
+            android:textColor="@color/putih"
+            android:id="@+id/buttonAdd" />
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:text="Daftar Pegawai"
+            android:background="@drawable/button_kotak_hijau"
+            android:textColor="@color/putih"
+            android:id="@+id/buttonView" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>
