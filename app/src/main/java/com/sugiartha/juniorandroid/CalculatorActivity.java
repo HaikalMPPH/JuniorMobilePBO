@@ -112,6 +112,7 @@ public class CalculatorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 double lhs = Double.parseDouble(angka_pertama.getText().toString());
                 double rhs = Double.parseDouble(angka_kedua.getText().toString());
+                hasil.setText(Double.toString(lhs % rhs));
             }
         });
 
