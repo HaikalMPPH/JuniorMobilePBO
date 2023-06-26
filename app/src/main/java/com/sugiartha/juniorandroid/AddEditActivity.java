@@ -1,7 +1,6 @@
 package com.sugiartha.juniorandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.sugiartha.juniorandroid.helper.DbHelper;
 
 public class AddEditActivity extends AppCompatActivity {
@@ -26,17 +24,17 @@ public class AddEditActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        txt_id = (EditText) findViewById(R.id.txt_id);
-        txt_name = (EditText) findViewById(R.id.txt_name);
-        txt_address = (EditText) findViewById(R.id.txt_address);
-        btn_submit = (Button) findViewById(R.id.btn_submit);
-        btn_cancel = (Button) findViewById(R.id.btn_cancel);
+        txt_id = findViewById(R.id.txt_id);
+        txt_name = findViewById(R.id.txt_name);
+        txt_address = findViewById(R.id.txt_address);
+        btn_submit = findViewById(R.id.btn_submit);
+        btn_cancel = findViewById(R.id.btn_cancel);
 
         id = getIntent().getStringExtra(SQLiteActivity.TAG_ID);
         name = getIntent().getStringExtra(SQLiteActivity.TAG_NAME);
         address = getIntent().getStringExtra(SQLiteActivity.TAG_ADDRESS);
 
-        if (id == null || id == "") {
+        if (id == null || id.equals("")) {
             setTitle("Add Data");
         } else {
             setTitle("Edit Data");
@@ -54,7 +52,7 @@ public class AddEditActivity extends AppCompatActivity {
                     } else {
                         edit();
                     }
-                } catch (Exception e){
+                } catch (Exception e) {
                     Log.e("Submit", e.toString());
                 }
             }
@@ -85,7 +83,7 @@ public class AddEditActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    // Kosongkan semua Edit Teks
+
     private void blank() {
         txt_name.requestFocus();
         txt_id.setText(null);
@@ -93,7 +91,6 @@ public class AddEditActivity extends AppCompatActivity {
         txt_address.setText(null);
     }
 
-    // Menyimpan Data ke Database SQLite
     private void save() {
         if (String.valueOf(txt_name.getText()).equals(null) || String.valueOf(txt_name.getText()).equals("") ||
                 String.valueOf(txt_address.getText()).equals(null) || String.valueOf(txt_address.getText()).equals("")) {
@@ -103,9 +100,12 @@ public class AddEditActivity extends AppCompatActivity {
             SQLite.insert(txt_name.getText().toString().trim(), txt_address.getText().toString().trim());
             blank();
             finish();
+
+            // Menampilkan notifikasi
+            Toast.makeText(getApplicationContext(), "Data berhasil ditambahkan", Toast.LENGTH_SHORT).show();
         }
     }
-    // Update data kedalam Database SQLite
+
     private void edit() {
         if (String.valueOf(txt_name.getText()).equals(null) || String.valueOf(txt_name.getText()).equals("") ||
                 String.valueOf(txt_address.getText()).equals(null) || String.valueOf(txt_address.getText()).equals("")) {
