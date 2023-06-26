@@ -22,7 +22,7 @@ public class AddEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         txt_id = findViewById(R.id.txt_id);
         txt_name = findViewById(R.id.txt_name);

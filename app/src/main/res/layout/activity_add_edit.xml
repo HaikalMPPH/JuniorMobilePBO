@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".AddEditActivity">
+    tools:context=".AddEditActivity"
+    android:theme="@style/Theme.MaterialComponents">
 
     <ImageView
         android:id="@+id/image2"
