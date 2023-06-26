@@ -61,7 +61,8 @@
         android:padding="12dp"
         android:elevation="2dp"
         android:background="@drawable/edittext_background"
-        android:textColorHint="#888888" />
+        android:textColorHint="@color/gruv_fg"
+        android:textColor="@color/gruv_fg"/>
 
     <EditText
         android:id="@+id/txt_address"
@@ -75,7 +76,8 @@
         android:padding="12dp"
         android:elevation="2dp"
         android:background="@drawable/edittext_background"
-        android:textColorHint="#888888" />
+        android:textColorHint="@color/gruv_fg"
+        android:textColor="@color/gruv_fg"/>
 
     <Button
         android:id="@+id/btn_submit"
