@@ -74,12 +74,12 @@ public class SQLiteActivity extends AppCompatActivity {
                             case 0:
                                 Intent intent = new Intent(SQLiteActivity.this, AddEditActivity.class);
                                 intent.putExtra(TAG_ID, idx);
-                                intent.putExtra(TAG_NAME, name);
-                                intent.putExtra(TAG_ADDRESS, address);
+                                intent.putExtra(TAG_NAME, name.substring(6)); // Menghilangkan "Nama: " dari teks nama
+                                intent.putExtra(TAG_ADDRESS, address.substring(8)); // Menghilangkan "Alamat: " dari teks alamat
                                 startActivity(intent);
                                 break;
                             case 1:
-                                deleteData(Integer.parseInt(idx), position); // Panggil fungsi deleteData
+                                deleteData(Integer.parseInt(idx), position);
                                 break;
                         }
                     }
@@ -87,7 +87,12 @@ public class SQLiteActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        itemList.clear(); // Hapus data sebelum memperbarui
         getAllData();
     }
 
@@ -110,7 +115,6 @@ public class SQLiteActivity extends AppCompatActivity {
         }
         adapter.notifyDataSetChanged();
     }
-
 
     // Fungsi untuk menghapus data dari database SQLite
     private void deleteData(int id, final int position) {
