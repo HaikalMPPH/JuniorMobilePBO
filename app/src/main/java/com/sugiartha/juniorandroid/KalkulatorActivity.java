@@ -1,5 +1,6 @@
 package com.sugiartha.juniorandroid;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -13,12 +14,14 @@ public class KalkulatorActivity extends AppCompatActivity {
     EditText angka1, angka2;
     Button btnHitung;
     TextView txtHasil;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kalkulator);
 
+        actionBar.show();
         btnHitung = (Button) findViewById(R.id.btnHitung);
         angka1 = (EditText) findViewById(R.id.angka1);
         angka2 = (EditText) findViewById(R.id.angka2);

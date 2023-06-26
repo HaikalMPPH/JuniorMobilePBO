@@ -5,34 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".KalkulatorActivity">
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Input Angka Pertama"/>-->
-
-    <!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Input Angka Kedua"/>-->
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/elip1" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/elip2" />
+    tools:context=".KalkulatorActivity"
+    android:background="@color/gruv_bg">
 
     <EditText
         android:id="@+id/angka1"
         android:layout_width="249dp"
         android:layout_height="wrap_content"
+        android:background="@color/gruv_bg2"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -51,6 +32,7 @@
         android:id="@+id/btnHitung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -63,7 +45,7 @@
         android:layout_marginEnd="238dp"
         android:layout_marginRight="238dp"
         android:layout_marginBottom="367dp"
-        android:background="@color/ijo_gelap"
+        android:background="@color/gruv_green"
         android:gravity="center"
         android:text=" + "
         android:textAlignment="center"
@@ -74,6 +56,8 @@
         android:id="@+id/txtHasil"
         android:layout_width="155dp"
         android:layout_height="wrap_content"
+        android:background="@color/gruv_grey"
+
         android:layout_alignStart="@+id/btnHitung"
         android:layout_alignLeft="@+id/btnHitung"
         android:layout_alignTop="@+id/btnHitung"
@@ -87,6 +71,8 @@
         android:layout_marginRight="76dp"
         android:layout_marginBottom="-1dp"
         android:gravity="center"
+
+        android:textColor="@color/gruv_bg2"
         android:text=" "
         android:textAlignment="center"
         android:textSize="40dp" />
@@ -95,6 +81,8 @@
         android:id="@+id/angka2"
         android:layout_width="259dp"
         android:layout_height="wrap_content"
+        android:background="@color/gruv_bg2"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"

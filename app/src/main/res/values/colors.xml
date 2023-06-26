@@ -8,8 +8,10 @@
     <color name="gruv_bg2">#F9F5D7</color>
     <color name="gruv_fg">#3c3836</color>
     <color name="gruv_grey">#7c6f64</color>
-    <color name="gruv_green">#98971a</color>
-    <color name="gruv_aqua">#689d6a</color>
+    <color name="gruv_grey2">#a89984</color>
+    <color name="gruv_green">#b8bb26</color>
+    <color name="gruv_aqua">#8ec07c</color>
+    <color name="gruv_red">#fb4934</color>
 
     <color name="biru">#337dff</color>
     <color name="orange">#fca220</color>
