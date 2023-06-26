@@ -18,6 +18,11 @@ public class CalculatorActivity extends AppCompatActivity {
     Button tambah, kurang, kali, bagi, bersihkan, mod, pow, root, shift_l, shift_r;
     TextView hasil;
 
+    // buat ngeformat hasil biar yg keluar desimalnya cuma satu
+    static String format_hasil(double hasil) {
+        return String.format("%.1f", hasil);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,9 +104,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     double angka1 = Double.parseDouble(angka_pertama.getText().toString());
                     double angka2 = Double.parseDouble(angka_kedua.getText().toString());
                     double result = angka1 / angka2;
-                    hasil
-                        .setText(new DecimalFormat("##.#")
-                        .format(angka1/angka2));
+                    hasil.setText(format_hasil(result));
                 }
                 else {
                     Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
@@ -117,7 +120,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
                     double lhs = Double.parseDouble(angka_pertama.getText().toString());
                     double rhs = Double.parseDouble(angka_kedua.getText().toString());
-                    hasil.setText(Double.toString(lhs % rhs));
+                    hasil.setText(format_hasil(lhs % rhs));
                 }
                 else {
                     Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
@@ -132,7 +135,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
                     double lhs = Double.parseDouble(angka_pertama.getText().toString());
                     double rhs = Double.parseDouble(angka_kedua.getText().toString());
-                    hasil.setText(Double.toString(Math.pow(lhs, rhs)));
+                    hasil.setText(format_hasil(Math.pow(lhs, rhs)));
                 }
                 else {
                     Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
@@ -147,7 +150,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
                     double lhs = Double.parseDouble(angka_pertama.getText().toString());
                     double rhs = Double.parseDouble(angka_kedua.getText().toString());
-                    hasil.setText(Double.toString(Math.pow(lhs, -rhs)));
+                    hasil.setText(format_hasil(Math.pow(lhs, -rhs)));
                 }
                 else {
                     Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
@@ -162,7 +165,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
                     int lhs = Integer.parseInt(angka_pertama.getText().toString());
                     int rhs = Integer.parseInt(angka_kedua.getText().toString());
-                    hasil.setText(Double.toString(lhs << rhs));
+                    hasil.setText(format_hasil((double)(lhs << rhs)));
                 }
                 else {
                     Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
@@ -177,7 +180,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 if((angka_pertama.getText().length()>0) && (angka_kedua.getText().length()>0)) {
                     int lhs = Integer.parseInt(angka_pertama.getText().toString());
                     int rhs = Integer.parseInt(angka_kedua.getText().toString());
-                    hasil.setText(Double.toString(lhs >> rhs));
+                    hasil.setText(format_hasil((double)(lhs >> rhs)));
                 }
                 else {
                     Toast toast = Toast.makeText(CalculatorActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
