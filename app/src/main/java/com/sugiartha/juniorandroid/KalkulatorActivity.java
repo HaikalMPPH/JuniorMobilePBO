@@ -21,7 +21,6 @@ public class KalkulatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kalkulator);
 
-        actionBar.show();
         btnHitung = (Button) findViewById(R.id.btnHitung);
         angka1 = (EditText) findViewById(R.id.angka1);
         angka2 = (EditText) findViewById(R.id.angka2);
