@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         // carousel balik lagi
-        carouselView = (CarouselView) findViewById(R.id.carousel);
+        carouselView = (CarouselView) findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
         carouselView.setImageListener(new ImageListener() {
             @Override
@@ -237,12 +237,12 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-//    ImageListener imageListener = new ImageListener() {
-//        @Override
-//        public void setImageForPosition(int position, ImageView imageView) {
-//            imageView.setImageResource(sampleImages[position]);
-//        }
-//    };
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
+        }
+    };
 
     @Override
     public void onBackPressed() {
