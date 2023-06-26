@@ -4,21 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".InternalExternalActivity">
+    tools:context=".InternalExternalActivity"
+    android:background="@drawable/bgsignup">
 
     <TextView
         android:id="@+id/textBaca"
-        android:layout_width="372dp"
-        android:layout_height="106dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:layout_width="370dp"
+        android:layout_height="163dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btnBuatFile"
-        android:layout_width="match_parent"
+        android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textBaca"
-        android:layout_marginTop="170dp"
-        android:text="Buat File" />
+        android:layout_marginTop="58dp"
+        android:backgroundTint="#009688"
+        android:text="Buat File"
+        android:textColor="@color/putih" />
 
     <Button
         android:id="@+id/btnUbahFile"
@@ -26,7 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnBuatFile"
         android:layout_marginTop="13dp"
-        android:text="Ubah File" />
+        android:text="Ubah File"
+        android:backgroundTint="#009688"
+        android:textColor="@color/putih" />
 
     <Button
         android:id="@+id/btnBacaFile"
@@ -34,7 +40,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnUbahFile"
         android:layout_marginTop="9dp"
-        android:text="Baca File" />
+        android:text="Baca File"
+        android:backgroundTint="#009688"
+        android:textColor="@color/putih" />
 
     <Button
         android:id="@+id/btnHapusFile"
@@ -42,7 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnBacaFile"
         android:layout_marginTop="6dp"
-        android:text="Hapus File" />
+        android:text="Hapus File"
+        android:backgroundTint="#009688"
+        android:textColor="@color/putih" />
 
 </RelativeLayout>
 
