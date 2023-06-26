@@ -9,7 +9,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class KoneksiActivity extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class KoneksiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_koneksi);
 
-        Button btnCheck = (Button) findViewById(R.id.btnCheck);
+        ImageButton btnCheck = (ImageButton) findViewById(R.id.btnCheck);
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,8 +27,12 @@ public class KoneksiActivity extends AppCompatActivity {
                 NetworkInfo netInfo = cm.getActiveNetworkInfo();
                 if (netInfo != null && netInfo.isConnected()) {
                     Toast.makeText(getApplication(), "You are connected to "+netInfo.getTypeName()+" "+netInfo.getSubtypeName(), Toast.LENGTH_SHORT).show();
+                    btnCheck.setBackgroundColor(getResources().getColor(R.color.gruv_aqua));
+                    btnCheck.setImageDrawable(getResources().getDrawable(R.drawable.wifi_on_foreground));
                 } else {
                     Toast.makeText(getApplication(), "You don't have connection.", Toast.LENGTH_SHORT).show();
+                    btnCheck.setBackgroundColor(getResources().getColor(R.color.gruv_red));
+                    btnCheck.setImageDrawable(getResources().getDrawable(R.drawable.wifi_off_foreground));
                 }
             }
         });
