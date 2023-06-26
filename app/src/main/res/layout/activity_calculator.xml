@@ -5,137 +5,182 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalculatorActivity">
+    tools:context=".CalculatorActivity"
+    android:background="@color/gruv_bg">
 
     <!-- HASIL -> sebelah kiri angka 1 & angka 2 -->
     <TextView
         android:id="@+id/hasil"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="0"
+        android:background="@color/gruv_grey"
+
         android:layout_marginTop="120dp"
         android:layout_marginStart="25dp"
+
+        android:text="0"
+        android:textColor="@color/gruv_bg2"
         android:textAlignment="center"
         android:gravity="center"
         android:autoSizeTextType="uniform"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:textStyle="bold"/>
 
     <!-- INPUT -->
     <EditText
         android:id="@+id/angka_pertama"
         android:layout_width="250dp"
         android:layout_height="50dp"
+        android:background="@color/gruv_bg2"
+
         android:layout_alignTop="@id/hasil"
-        android:layout_marginEnd="25dp"
         android:layout_toRightOf="@id/hasil"
-        android:hint="First"
+        android:layout_marginLeft="10dp"
+
+        android:hint="0"
+        android:textAlignment="textEnd"
         android:inputType="number"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:textStyle="bold"/>
     <EditText
         android:id="@+id/angka_kedua"
         android:layout_toRightOf="@id/hasil"
         android:layout_below="@id/angka_pertama"
+        android:background="@color/gruv_bg2"
+
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_alignRight="@id/angka_pertama"
         android:layout_alignBottom="@id/hasil"
-        android:hint="Second"
+        android:layout_marginLeft="10dp"
+
+        android:hint="0"
+        android:textAlignment="textEnd"
         android:inputType="number"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+    <!-- INPUT -->
 
 <!-- OPERATOR -->
 <!-- TAMBAH -->
     <Button
         android:id="@+id/tambah"
         android:layout_below="@id/hasil"
+        android:background="@color/gruv_aqua"
+
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="10dp"
         android:layout_alignLeft="@id/hasil"
         android:textSize="25dp"
-        android:text="+" />
+        android:text="+"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/kurang"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@color/gruv_aqua"
+
         android:layout_below="@id/hasil"
         android:layout_marginLeft="10dp"
         android:layout_alignTop="@id/tambah"
         android:layout_alignBottom="@id/tambah"
         android:layout_toRightOf="@+id/tambah"
         android:textSize="25dp"
-        android:text="-" />
+        android:text="-"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/kali"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@color/gruv_aqua"
+
         android:layout_toRightOf="@id/kurang"
         android:layout_marginLeft="10dp"
         android:layout_alignBottom="@id/tambah"
         android:layout_alignTop="@id/tambah"
         android:textSize="25dp"
-        android:text="*" />
+        android:text="*"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/bagi"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@color/gruv_aqua"
+
         android:layout_marginTop="10dp"
         android:layout_below="@id/tambah"
         android:layout_alignRight="@id/tambah"
         android:layout_alignLeft="@id/tambah"
         android:textSize="25dp"
-        android:text="/" />
+        android:text="/"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/mod"
         android:layout_below="@id/tambah"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@color/gruv_aqua"
+
         android:layout_marginTop="10dp"
         android:layout_alignRight="@id/kurang"
         android:layout_alignLeft="@id/kurang"
         android:textSize="25dp"
-        android:text="%" />
+        android:text="%"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/pow"
         android:layout_below="@id/tambah"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@color/gruv_aqua"
+
         android:layout_marginTop="10dp"
         android:layout_alignLeft="@id/kali"
         android:layout_alignRight="@id/kali"
         android:textSize="25dp"
-        android:text="^" />
+        android:text="^"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/root"
         android:layout_below="@id/bagi"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@color/gruv_aqua"
+
         android:layout_marginTop="10dp"
         android:layout_alignLeft="@id/bagi"
         android:layout_alignRight="@id/bagi"
         android:textSize="25dp"
-        android:text="√" />
+        android:text="√"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/shift_l"
         android:layout_below="@id/bagi"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@color/gruv_aqua"
+
         android:layout_marginTop="10dp"
         android:layout_alignLeft="@id/mod"
         android:layout_alignRight="@id/mod"
         android:textSize="25dp"
-        android:text="&lt;&lt;" />
+        android:text="&lt;&lt;"
+        android:textStyle="bold"/>
     <Button
         android:id="@+id/shift_r"
         android:layout_below="@id/bagi"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@color/gruv_aqua"
+
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/shift_l"
         android:layout_alignRight="@id/pow"
         android:layout_alignLeft="@id/pow"
         android:textSize="25dp"
-        android:text=">>" />
+        android:text=">>"
+        android:textStyle="bold"/>
 
     <!-- CLEAR -->
     <Button
@@ -143,11 +188,15 @@
         android:layout_width="75dp"
         android:layout_height="200dp"
         android:layout_marginLeft="10dp"
+        android:background="@color/gruv_red"
+
         android:layout_below="@id/hasil"
         android:layout_alignTop="@id/tambah"
         android:layout_alignBottom="@id/shift_l"
+
         android:layout_toRightOf="@id/kali"
         android:layout_alignRight="@id/angka_kedua"
-        android:text="CLEAR" />
+        android:text="CLR"
+        android:textStyle="bold"/>
 
 </RelativeLayout>
