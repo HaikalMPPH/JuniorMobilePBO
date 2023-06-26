@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         RelativeLayout splash = findViewById(R.id.splashLayout); // Dapatkan referensi ke layout root
 
         // Membuat animasi fade-in
-        Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_in_up);
+        Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         logoImageView.startAnimation(fadeInAnimation);
 
         // Kodingan untuk membuat animasi background-nya bergerak
@@ -39,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
                 // Memulai MainActivity dengan efek transisi
                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_left);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
             }
         }, SPLASH_DELAY_MS);
