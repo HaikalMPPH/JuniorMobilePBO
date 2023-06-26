@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class StorageActivity extends AppCompatActivity {
 
-    private Button Internal, External;
+    private ImageButton Internal, External;
     private EditText InputData;
 
     @Override

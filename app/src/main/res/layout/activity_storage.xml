@@ -1,30 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/gruv_bg"
     tools:context=".StorageActivity">
 
     <EditText
         android:id="@+id/input_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:background="@color/gruv_bg2"
+        android:textColor="@color/gruv_fg"
+
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="150dp"
+
         android:ems="10"
         android:hint="Masukan Data"
         android:inputType="textPersonName" />
 
-    <Button
+    <ImageButton
         android:id="@+id/save_internal"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Simpan ke Internal" />
+        android:src="@drawable/folder_img_foreground"
 
-    <Button
+        android:background="@color/gruv_aqua"
+
+        android:layout_below="@id/input_data"
+        android:layout_alignLeft="@id/input_data"
+        android:layout_marginRight="210dp"
+        android:layout_marginTop="25dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INTERNAL"
+        android:layout_below="@id/save_internal"
+        android:textAlignment="center"
+        android:layout_alignRight="@id/save_internal"
+        android:layout_alignLeft="@id/save_internal"
+        android:textStyle="bold"
+        android:textColor="@color/gruv_fg"/>
+
+    <ImageButton
         android:id="@+id/save_external"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Simpan ke External" />
+        android:src="@drawable/sdcard_img_foreground"
 
-</LinearLayout>
+        android:background="@color/gruv_aqua"
+
+        android:layout_below="@id/input_data"
+        android:layout_alignTop="@id/save_internal"
+        android:layout_alignBottom="@id/save_internal"
+        android:layout_alignRight="@id/input_data"
+        android:layout_marginLeft="210dp"
+
+        android:text="SAVE TO EXTERNAL" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EXTERNAL"
+        android:layout_below="@id/save_external"
+        android:textAlignment="center"
+        android:layout_alignRight="@id/save_external"
+        android:layout_alignLeft="@id/save_external"
+        android:textStyle="bold"
+        android:textColor="@color/gruv_fg"/>
+
+</RelativeLayout>

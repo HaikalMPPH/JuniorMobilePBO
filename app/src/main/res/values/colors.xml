@@ -4,11 +4,19 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <color name="gruv_bg">#FBF1C7</color>
+    <color name="gruv_bg2">#F9F5D7</color>
+    <color name="gruv_fg">#3c3836</color>
+    <color name="gruv_grey">#7c6f64</color>
+    <color name="gruv_green">#98971a</color>
+    <color name="gruv_aqua">#689d6a</color>
+
     <color name="biru">#337dff</color>
     <color name="orange">#fca220</color>
     <color name="coklat">#c49b60</color>
     <color name="putih">#FFFFFF</color>
     <color name="hitam">#000000</color>
+
     <color name="aquamarine">#7fffd4</color>
     <color name="aquamarine1">#3DE5A7</color>
     <color name="aquamarine2">#0077A7</color>

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".AddEditActivity">
+    tools:context=".AddEditActivity"
+    android:theme="@style/Theme.MaterialComponents">
 
     <ImageView
         android:id="@+id/image2"
@@ -60,7 +61,8 @@
         android:padding="12dp"
         android:elevation="2dp"
         android:background="@drawable/edittext_background"
-        android:textColorHint="#888888" />
+        android:textColorHint="@color/gruv_fg"
+        android:textColor="@color/gruv_fg"/>
 
     <EditText
         android:id="@+id/txt_address"
@@ -74,7 +76,8 @@
         android:padding="12dp"
         android:elevation="2dp"
         android:background="@drawable/edittext_background"
-        android:textColorHint="#888888" />
+        android:textColorHint="@color/gruv_fg"
+        android:textColor="@color/gruv_fg"/>
 
     <Button
         android:id="@+id/btn_submit"
