@@ -45,6 +45,16 @@
             android:layout_height="wrap_content"
             android:hint="Masukkan Password"/>
 
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_kotak_hijau"
+            android:text="LOGIN"
+            android:textColor="@color/putih" />
+
+    </LinearLayout>
 
 </LinearLayout>
