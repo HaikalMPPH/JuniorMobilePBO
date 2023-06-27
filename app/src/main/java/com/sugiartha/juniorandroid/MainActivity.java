@@ -1,6 +1,7 @@
 package com.sugiartha.juniorandroid;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -23,6 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 // carousel
 import com.synnapps.carouselview.CarouselView;
@@ -36,15 +38,23 @@ public class MainActivity extends AppCompatActivity
 
     int[] sampleImages = {R.drawable.gambar_1, R.drawable.gambar_2, R.drawable.gambar_3};
 
+    private AnimationDrawable animationDrawable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        RelativeLayout gradient = findViewById(R.id.main);
 
         // carousel balik lagi
         carouselView = (CarouselView) findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
+
+        // Kodingan untuk membuat animasi background-nya bergerak
+        animationDrawable = (AnimationDrawable) gradient.getBackground();
+        animationDrawable.setEnterFadeDuration(3000);
+        animationDrawable.setExitFadeDuration(3000);
         carouselView.setImageListener(new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
@@ -299,5 +309,21 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (animationDrawable != null && !animationDrawable.isRunning()) {
+            animationDrawable.start();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (animationDrawable != null && animationDrawable.isRunning()) {
+            animationDrawable.stop();
+        }
     }
 }
